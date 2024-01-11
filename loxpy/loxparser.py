@@ -59,14 +59,20 @@ class Scanner:
     def __init__(self, source: str):
         self.source = source
         self.tokens: List[Token] = []
+        self.start = 0
+        self.current = 0
+        self.line = 1
         
     def scanTokens(self):
         while not self.isAtEnd():
-            start = current
+            self.start = self.current
             self.scanToken()
         
-        self.tokens.append(Token(TokenType.EOF, "", None, line))
+        self.tokens.append(Token(TokenType.EOF, "", None, self.line))
         return self.tokens
+    
+    def isAtEnd(self):
+        return self.current >= len(self.source)
             
     
 def scanTokens(content):

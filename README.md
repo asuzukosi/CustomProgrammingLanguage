@@ -1,0 +1,2 @@
+### Build custom programming language
+This project is for hte design and development of a custom programming language for my personal study. The language would be built by implementing various interpreters for that language
