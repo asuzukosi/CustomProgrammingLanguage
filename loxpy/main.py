@@ -1,6 +1,5 @@
 from typing import List
 import sys
-from loxparser import scanTokens
 
 
 class InvalidArgCount(Exception):
@@ -43,11 +42,11 @@ class Lox:
     
     def execute(self, content):
         # executes a loxpy script based on the content of the script
-        tokens: List = scanTokens(content)
-        for t in tokens:
-            print(t)
+        # tokens: List = scanTokens(content, self)
+        # for t in tokens:
+        #     print(t)
+        pass
             
-    
     def error(self, line, message):
         self.report(line, "", message)
         

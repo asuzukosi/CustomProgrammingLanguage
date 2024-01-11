@@ -23,3 +23,9 @@ Such useful imformation include
 - Location Informaton = We need to keep track of where our tokens exist, so if an error occurs we can easily point to the location of the tokens existence. 
 
 We can build a complete scanner using regular expressions, but for the purpose of this project, since the focus is on handcrafting we would be traversing through the tokens in the content of the source code manually.
+
+One character lookahead is when yo uonly look one character into the future when you are trying to determine the nature of a token. The smaller the number for the character lookahead, the faster the parser runs. Most languages use one or two character lookaheads
+
+Maximal munch in a programming parsers is when two patterns can fit a particular sequence, we go for the longest valid sequence.
+
+Reserved words are identifiers that have been claimed for use in the language
