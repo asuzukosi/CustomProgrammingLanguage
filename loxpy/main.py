@@ -51,7 +51,7 @@ class Lox:
         self.report(line, "", message)
         
     def report(self, line, where, message):
-        print("[line " + line + "] Error" + where + ": " + message)
+        print("[line " + str(line) + "] Error" + where + ": " + message)
         self.hadError = True
         
         
