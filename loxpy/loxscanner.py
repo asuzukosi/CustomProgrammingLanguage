@@ -69,13 +69,15 @@ keywordMap = {
 class Token:
     def __init__(self, type: TokenType, lexeme: str, literal, line: int):
         self.type = type
-        self.lexeme = lexeme
-        self.literal = literal
-        self.line = line
+        self.lexeme = lexeme if lexeme else ""
+        self.literal = literal if literal else ""
+        self.line = line if line else ""
     
     def __str__(self) -> str:
-        return self.type + " " + self.lexeme + " " + self.literal
+        return str(self.type) + " " + self.lexeme + " " + self.literal
     
+    def __repr__(self) -> str:
+        return str(self.type) + " " + self.lexeme + " " + self.literal
     
 class Scanner:
     def __init__(self, source: str, lox):
@@ -241,7 +243,8 @@ class Scanner:
 
 lox = Lox()
 content = ""
-with open("CustomLanguage/loxpy/test.lox", "r") as f:
+with open("test.lox", "r") as f:
     content = f.read()
 scanner = Scanner(content, lox)
 tokens = scanner.scanTokens()
+print(tokens)

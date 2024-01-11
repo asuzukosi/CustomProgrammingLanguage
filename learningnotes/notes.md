@@ -28,4 +28,12 @@ One character lookahead is when yo uonly look one character into the future when
 
 Maximal munch in a programming parsers is when two patterns can fit a particular sequence, we go for the longest valid sequence.
 
-Reserved words are identifiers that have been claimed for use in the language
+Reserved words are identifiers that have been claimed for use in the language. 
+
+After the completion of the scanner, we now have a list of all the tokens from the source file, these tokens hold information such as the token type, literal value, lexeme and line location.  While this is a notable acheivement to be able to use the tokens gathered to reasonably understand our program we need to convert these list of tokens into a higher level data structure which would represent sematic information about our code.  This high levle data structure is the abstract syntax tree, we shall use the tokens gathered from the scanner to contruct our AST, this phase is known as parsing. 
+
+The abstract syntax tree would be a semantic representation for our code. This should be easy for the parser to produce and for the interpreter to consume. 
+
+We are moving up the chomsky's language heirarchy, instead of looking at the language just in the form of regular expression, we are now beginning to consider context-free grammar. At the level of the CFG, each token is an alphabet as we have moved up a layer of abstaction. We are moving from Lexical Grammar to Syntactic Grammar. In programming language design, context-free grammars help you crystalize your language syntax design. They also come as a handy tool for communicating the syntax of your programming language to other language hackers. 
+
+At the very least, both parsers and interpreters would be making use of the AST. 
